@@ -23,21 +23,21 @@ public class JoystickDrive extends Drive {
     }
  
     @Override
-    public double getX() {
+    public double getX() { //drives robot away from / towards the controller
         double xRaw = m_OI.getTranslateX();
         SmartDashboard.putNumber("JoystickX",  xyJoyMap.calculateMappedVal(xRaw));
         return xyJoyMap.calculateMappedVal(xRaw);
     }
 
     @Override
-    public double getY() {
+    public double getY() { //strafes robot left and right from the view of the controller
         double yRaw = m_OI.getTranslateY();
         SmartDashboard.putNumber("JoystickY",  xyJoyMap.calculateMappedVal(yRaw));
         return xyJoyMap.calculateMappedVal(yRaw);
     }
 
     @Override
-    public double getTheta() {
+    public double getTheta() { //rotates the robot
         double thetaRaw = m_OI.getRotation();
         SmartDashboard.putNumber("JoystickTheta",  xyJoyMap.calculateMappedVal(thetaRaw));
         return thetaJoyMap.calculateMappedVal(thetaRaw);
